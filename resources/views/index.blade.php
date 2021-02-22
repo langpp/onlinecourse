@@ -96,16 +96,17 @@
 		</div>
 		<div class="container">
 			<div class="row justify-content-center">
+				@foreach ($allcourse as $all)
 				<div class="col-lg-4 col-md-4 col-sm-6 col-12">
 					<div class="single-course">
-						<a href="{{url('/course')}}">
-							<img src="{{url('/img/course-img/course-img-1.jpg')}}" alt="Image">
+						<a href="{{url('/course')}}/{{$all->slug}}">
+							<img src="{{ $all->img }}" alt="Image" style="width: 100%;height: 300px;object-fit: cover;">
 						</a>
 						<div class="course-content">
-							<span class="price">Rp 120.000</span>
-							<span class="tag">Education</span>
-							<a href="{{url('/course')}}">
-								<h3>Programming foundations: real-world examples</h3>
+							<span class="price">Rp {{ number_format($all->price,0,",",".") }}</span>
+							<span class="tag">{{ $all->kategori }}</span>
+							<a href="{{url('/course')}}/{{$all->slug}}">
+								<h3>{{ $all->title }}</h3>
 							</a>
 							<ul class="rating">
 								<li>
@@ -125,283 +126,34 @@
 								</li>
 							</ul>
 							<ul class="lessons">
-								<li>0 Lessons</li>
-								<li class="float">44 Students</li>
+								<li>{{ $all->tingkat }}</li>
+								<li class="float">{{ $all->premium }}</li>
 							</ul>
 							<hr>
 							<ul class="lessons">
-								<li>Sekali Bayar</li>
-								<li class="float">Berlangganan</li>
+								<li>@if($all->sekalibayar == "0") <i class="fas fa-check"></i> @else <i class="fas fa-times"></i> @endif Sekali Bayar</li>
+								<li class="float">@if($all->langganan == "0") <i class="fas fa-check"></i> @else <i class="fas fa-times"></i> @endif Berlangganan</li>
 							</ul>
 							<hr>
 							<ul class="lessons">
-								<li>Free Sertifikat</li>
-								<li class="float">Free Konsultasi</li>
+								<li>@if($all->sertifikat == "0") <i class="fas fa-check"></i> @else <i class="fas fa-times"></i> @endif Free Sertifikat</li>
+								<li class="float">@if($all->konsultasi == "0") <i class="fas fa-check"></i> @else <i class="fas fa-times"></i> @endif Free Konsultasi</li>
 							</ul>
 							<div class="feedback-title mt-3">
-								<img src="{{url('/img/feedback-img/feedback-img-1.jpg')}}" alt="Image">
-								<h3 class="mb-0">Jessica Molony</h3>
-								<span>Designer</span>
+								<img src="{{ $all->img_pemateri }}" alt="Image" style="width: 70px;height: 70px;object-fit: cover;">
+								<h3 class="mb-0">{{ $all->pemateri }}</h3>
+								<span>{{ $all->jabatan }}</span>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6 col-12">
-					<div class="single-course">
-						<a href="{{url('/course')}}">
-							<img src="{{url('/img/course-img/course-img-2.jpg')}}" alt="Image">
-						</a>
-						<div class="course-content">
-							<span class="price">Rp 150.000</span>
-							<span class="tag">School</span>
-							<a href="{{url('/course')}}">
-								<h3>Teaching assistant certificate in learning in schools</h3>
-							</a>
-							<ul class="rating">
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-							</ul>
-							<ul class="lessons">
-								<li>0 Lessons</li>
-								<li class="float">44 Students</li>
-							</ul>
-							<hr>
-							<ul class="lessons">
-								<li>Sekali Bayar</li>
-								<li class="float">Berlangganan</li>
-							</ul>
-							<hr>
-							<ul class="lessons">
-								<li>Free Sertifikat</li>
-								<li class="float">Free Konsultasi</li>
-							</ul>
-							<div class="feedback-title mt-3">
-								<img src="{{url('/img/feedback-img/feedback-img-1.jpg')}}" alt="Image">
-								<h3 class="mb-0">Jessica Molony</h3>
-								<span>Designer</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6 col-12">
-					<div class="single-course">
-						<a href="{{url('/course')}}">
-							<img src="{{url('/img/course-img/course-img-3.jpg')}}" alt="Image">
-						</a>
-						<div class="course-content">
-							<span class="price">Rp 220.000</span>
-							<span class="tag">Language</span>
-							<a href="{{url('/course')}}">
-								<h3>English: spelling, punctuation and grammar</h3>
-							</a>
-							<ul class="rating">
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-							</ul>
-							<ul class="lessons">
-								<li>0 Lessons</li>
-								<li class="float">39 Students</li>
-							</ul>
-							<hr>
-							<ul class="lessons">
-								<li>Sekali Bayar</li>
-								<li class="float">Berlangganan</li>
-							</ul>
-							<hr>
-							<ul class="lessons">
-								<li>Free Sertifikat</li>
-								<li class="float">Free Konsultasi</li>
-							</ul>
-							<div class="feedback-title mt-3">
-								<img src="{{url('/img/feedback-img/feedback-img-1.jpg')}}" alt="Image">
-								<h3 class="mb-0">Jessica Molony</h3>
-								<span>Designer</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6 col-12">
-					<div class="single-course">
-						<a href="{{url('/course')}}">
-							<img src="{{url('/img/course-img/course-img-4.jpg')}}" alt="Image">
-						</a>
-						<div class="course-content">
-							<span class="price">Rp 420.000</span>
-							<span class="tag">Teaching</span>
-							<a href="{{url('/course')}}">
-								<h3>Introduction to cybersecurity for teachers</h3>
-							</a>
-							<ul class="rating">
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-							</ul>
-							<ul class="lessons">
-								<li>0 Lessons</li>
-								<li class="float">50 Students</li>
-							</ul>
-							<hr>
-							<ul class="lessons">
-								<li>Sekali Bayar</li>
-								<li class="float">Berlangganan</li>
-							</ul>
-							<hr>
-							<ul class="lessons">
-								<li>Free Sertifikat</li>
-								<li class="float">Free Konsultasi</li>
-							</ul>
-							<div class="feedback-title mt-3">
-								<img src="{{url('/img/feedback-img/feedback-img-1.jpg')}}" alt="Image">
-								<h3 class="mb-0">Jessica Molony</h3>
-								<span>Designer</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6 col-12">
-					<div class="single-course">
-						<a href="{{url('/course')}}">
-							<img src="{{url('/img/course-img/course-img-5.jpg')}}" alt="Image">
-						</a>
-						<div class="course-content">
-							<span class="price">Rp 520.000</span>
-							<span class="tag">Teaching</span>
-							<a href="{{url('/course')}}">
-								<h3>Learning Implementing Formative Assessment</h3>
-							</a>
-							<ul class="rating">
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-							</ul>
-							<ul class="lessons">
-								<li>0 Lessons</li>
-								<li class="float">44 Students</li>
-							</ul>
-							<hr>
-							<ul class="lessons">
-								<li>Sekali Bayar</li>
-								<li class="float">Berlangganan</li>
-							</ul>
-							<hr>
-							<ul class="lessons">
-								<li>Free Sertifikat</li>
-								<li class="float">Free Konsultasi</li>
-							</ul>
-							<div class="feedback-title mt-3">
-								<img src="{{url('/img/feedback-img/feedback-img-1.jpg')}}" alt="Image">
-								<h3 class="mb-0">Jessica Molony</h3>
-								<span>Designer</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6 col-12">
-					<div class="single-course">
-						<a href="{{url('/course')}}">
-							<img src="{{url('/img/course-img/course-img-1.jpg')}}" alt="Image">
-						</a>
-						<div class="course-content">
-							<span class="price">Rp 170.000</span>
-							<span class="tag">Education</span>
-							<a href="{{url('/course')}}">
-								<h3>Teaching languages in primary schools: putting research</h3>
-							</a>
-							<ul class="rating">
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-								<li>
-									<i class="bx bxs-star"></i>
-								</li>
-							</ul>
-							<ul class="lessons">
-								<li>0 Lessons</li>
-								<li class="float">44 Students</li>
-							</ul>
-							<hr>
-							<ul class="lessons">
-								<li>Sekali Bayar</li>
-								<li class="float">Berlangganan</li>
-							</ul>
-							<hr>
-							<ul class="lessons">
-								<li>Free Sertifikat</li>
-								<li class="float">Free Konsultasi</li>
-							</ul>
-							<div class="feedback-title mt-3">
-								<img src="{{url('/img/feedback-img/feedback-img-1.jpg')}}" alt="Image">
-								<h3 class="mb-0">Jessica Molony</h3>
-								<span>Designer</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				@endforeach
 			</div>
-			<div class="row justify-content-center">
+			<!-- <div class="row justify-content-center">
 				<div class="col-lg-3">
 					<a href="#" class="default-btn col-lg-12">View Other Course</a>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>

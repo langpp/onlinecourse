@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="{{url('/css/responsive.css')}}">
   <link rel="stylesheet" href="{{url('/css/custom.css')}}">
   <link rel="icon" type="image/png" href="{{url('/img/favicon.png')}}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <title>@yield('title')</title>
 </head>
 <body>
@@ -96,30 +97,30 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('/course')}}" class="nav-link">
                   Courses
-                  <i class="bx bx-chevron-down"></i>
                 </a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">Courses</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">Single Course</a>
-                  </li>
-                </ul>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">Contact</a>
+                <a href="{{url('/contact')}}" class="nav-link">Contact</a>
               </li>
             </ul>
 
             <div class="others-option">
+              <div class="option-item">
+                <i class="search-btn bx bx-search"></i>
+                <i class="close-btn bx bx-x"></i>
+                <div class="search-overlay search-popup">
+                  <div class='search-box'>
+                    <form class="search-form" action="{{url('/search')}}" method="GET">
+                      <input class="search-input" name="cari" placeholder="Search" type="text">
+                      <button class="search-button" type="submit"><i class="bx bx-search"></i></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
               <div class="register">
-                <a href="#" class="btn">
-                  Register
-                </a>
-                <a href="#" class="default-btn">
+                <a href="{{url('/auth')}}" class="default-btn">
                   Login
                 </a>
               </div>

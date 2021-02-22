@@ -11,7 +11,9 @@
 |
 */
 Route::get('/', 'ViewsController@index');
-Route::get('/course', 'ViewsController@course');
+Route::get('/course/{slug}', 'ViewsController@course');
+Route::get('/search', 'ViewsController@cari');
+Route::get('/contact', 'ViewsController@contact');
 Route::get('/auth', 'AuthController@index');
 Route::get('/dashboard', 'DashboardController@index');
 
