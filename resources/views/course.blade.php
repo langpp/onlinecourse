@@ -168,7 +168,7 @@
 							Ram <span>{{$course->ram}}</span>
 						</li>
 						<li>
-							Ram <span>{{$course->rom}}</span>
+							Rom <span>{{$course->rom}}</span>
 						</li>
 					</ul>
 				</div>
