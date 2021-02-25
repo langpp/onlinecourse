@@ -46,6 +46,7 @@
 					<ul class="sidebar-menu">
 						<li class="menu-header">Dashboard</li>
 						<li class="active"><a class="nav-link" href="{{url('dashboard')}}"><i class="fas fa-fire"></i> <span>Course</span></a></li>
+						<li><a class="nav-link" href="{{url('dashboard/payment')}}"><i class="fas fa-dollar-sign"></i> <span>Payment</span></a></li>
 						<li class="menu-header">Other Menu</li>
 						<li><a class="nav-link" href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
 					</ul>

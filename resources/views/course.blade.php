@@ -109,7 +109,7 @@
 							Demo Project: <a href="{{$course->demo_project}}}" target="_blank">Klik Disini</a>
 						</li>
 					</ul>
-					<a href="#" class="default-btn">Book now</a>
+					<a href="{{url('/checkout')}}?id_course={{$course->id_course}}" class="default-btn">Book now</a>
 					<div class="social-content">
 						<p>
 							Share this course

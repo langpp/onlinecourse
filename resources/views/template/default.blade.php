@@ -22,6 +22,27 @@
   <link rel="icon" type="image/png" href="{{url('/img/favicon.png')}}">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <title>@yield('title')</title>
+  <script src="{{url('/js/jquery.min.js')}}"></script>
+  <script src="{{url('/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url('/js/meanmenu.min.js')}}"></script>
+  <script src="{{url('/js/owl.carousel.min.js')}}"></script>
+  <script src="{{url('/js/wow.min.js')}}"></script>
+  <script src="{{url('/js/nice-select.min.js')}}"></script>
+  <script src="{{url('/js/magnific-popup.min.js')}}"></script>
+  <script src="{{url('/js/jarallax.min.js')}}"></script>
+  <script src="{{url('/js/appear.min.js')}}"></script>
+  <script src="{{url('/js/odometer.min.js')}}"></script>
+  <script src="{{url('/js/form-validator.min.js')}}"></script>
+  <script src="{{url('/js/contact-form-script.js')}}"></script>
+  <script src="{{url('/js/ajaxchimp.min.js')}}"></script>
+  <script src="{{url('/js/custom.js')}}"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  @if(\Session::has('alert'))
+  <script type="text/javascript">swal('Notifikasi', "{{Session::get('alert')}}", "error");</script>
+  @endif
+  @if(\Session::has('alert-success'))
+  <script type="text/javascript">swal('Notifikasi', "{{Session::get('alert-success')}}", "success");</script>
+  @endif
 </head>
 <body>
   <div class="loader-wrapper">
@@ -241,19 +262,5 @@
     <i class='bx bx-chevrons-up'></i>
     <i class='bx bx-chevrons-up'></i>
   </div>
-  <script src="{{url('/js/jquery.min.js')}}"></script>
-  <script src="{{url('/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{url('/js/meanmenu.min.js')}}"></script>
-  <script src="{{url('/js/owl.carousel.min.js')}}"></script>
-  <script src="{{url('/js/wow.min.js')}}"></script>
-  <script src="{{url('/js/nice-select.min.js')}}"></script>
-  <script src="{{url('/js/magnific-popup.min.js')}}"></script>
-  <script src="{{url('/js/jarallax.min.js')}}"></script>
-  <script src="{{url('/js/appear.min.js')}}"></script>
-  <script src="{{url('/js/odometer.min.js')}}"></script>
-  <script src="{{url('/js/form-validator.min.js')}}"></script>
-  <script src="{{url('/js/contact-form-script.js')}}"></script>
-  <script src="{{url('/js/ajaxchimp.min.js')}}"></script>
-  <script src="{{url('/js/custom.js')}}"></script>
 </body>
 </html>

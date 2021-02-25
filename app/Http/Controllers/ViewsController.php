@@ -36,6 +36,14 @@ class ViewsController extends Controller
     }
 
     public function contact(){
-        return view('contact',); 
+        return view('contact'); 
+    }
+
+    public function checkout(Request $request){
+        $id_course = $request->id_course;
+        $data = DB::table('course')->where('id_course', $id_course)->orderby('id_course', 'DESC')->first();
+        $data2 = DB::table('course')->orderby('id_course', 'DESC')->limit(6)->get();
+        $kiriman = ["course" => $data, "allcourse" => $data2];
+        return view('checkout', $kiriman);
     }
 }

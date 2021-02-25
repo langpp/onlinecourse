@@ -384,4 +384,14 @@ class DashboardController extends Controller
             echo "fail";
         }
     }
+
+    public function payment(){
+        if(Session::get('login')){
+            $data = DB::table('pay')->join('course', 'pay.course_id', '=', 'course.id_course')->orderby('id_payment', 'DESC')->get();
+            $kiriman = ["allpayment" => $data];
+            return view('dashboard/payment', $kiriman);
+        }else{
+            return redirect('/')->with('alert','Kamu Sudah Login !');
+        }
+    }
 }
