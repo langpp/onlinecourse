@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2021 at 05:21 AM
+-- Generation Time: Feb 25, 2021 at 08:04 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -71,6 +71,35 @@ INSERT INTO `course` (`id_course`, `title`, `tentang_kelas`, `slug`, `url_video`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pay`
+--
+
+CREATE TABLE `pay` (
+  `id_payment` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `address` text NOT NULL,
+  `course_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `notes` text NOT NULL,
+  `country` varchar(11) NOT NULL,
+  `order_id` varchar(20) NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pay`
+--
+
+INSERT INTO `pay` (`id_payment`, `first_name`, `last_name`, `address`, `course_id`, `created_at`, `updated_at`, `email`, `phone`, `notes`, `country`, `order_id`, `status`) VALUES
+(1, 'gilang', 'putra', 'depok', 4, '2021-02-25 05:26:00', '2021-02-25 05:26:00', 'gilangpermana1407@gmail.com', '0895616848424', '123', 'Ind', '492143318', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -101,6 +130,12 @@ ALTER TABLE `course`
   ADD PRIMARY KEY (`id_course`);
 
 --
+-- Indexes for table `pay`
+--
+ALTER TABLE `pay`
+  ADD PRIMARY KEY (`id_payment`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -115,6 +150,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `course`
   MODIFY `id_course` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `pay`
+--
+ALTER TABLE `pay`
+  MODIFY `id_payment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
